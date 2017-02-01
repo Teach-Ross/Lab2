@@ -33,6 +33,7 @@ public class Main {
         return even;
     }
 
+
     public static void playGame(){
         int inputNum = getInput("Please enter an integer (1-100): ");
 
@@ -61,7 +62,12 @@ public class Main {
         do {
             playGame();
             System.out.println("Continue? (Y/N)");
-            input = scnr.next();
+            input = scnr.nextLine();
+            while(!input.equalsIgnoreCase("y") || !input.equalsIgnoreCase("n")){
+                System.out.println("Input error");
+                System.out.println("Continue? (Y/N) ");
+                input = scnr.nextLine();
+            }
         } while (input.equalsIgnoreCase("y"));
 
 
